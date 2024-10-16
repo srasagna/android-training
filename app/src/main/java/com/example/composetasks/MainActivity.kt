@@ -28,8 +28,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val todoViewModel = ViewModelProvider(this)[TodoViewModel::class.java]
         setContent {
+            CounterScreen()
+            //ToastScreen()
 
-            TodoListPage(todoViewModel)
+            //TodoListPage(todoViewModel)
             //ListDemo()
 
 
