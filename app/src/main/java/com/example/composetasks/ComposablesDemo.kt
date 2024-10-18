@@ -25,20 +25,16 @@ fun SimplePageDesign() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            //.padding(16.dp),
         ,horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         StaticHeader()
 
-        Spacer(modifier = Modifier.height(32.dp)) // Spacer between header and content
-
-        // Counter section (stateful and dynamic)
+        Spacer(modifier = Modifier.height(32.dp))
         CounterSection()
 
-        Spacer(modifier = Modifier.height(32.dp)) // Spacer between sections
+        Spacer(modifier = Modifier.height(32.dp))
 
-        // Form input section (stateful and dynamic)
         InputSection()
     }
 }
@@ -54,7 +50,6 @@ fun StaticHeader() {
 
 @Composable
 fun CounterSection() {
-    // Remember the count value across recompositions
     var count by remember { mutableStateOf(0) }
 
     Column(
@@ -77,7 +72,6 @@ fun InputSection() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Input field to take user input
         TextField(
             value = inputText,
             onValueChange = { inputText = it },
@@ -86,7 +80,6 @@ fun InputSection() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Display the entered text dynamically
         Text(text = "You typed: $inputText")
     }
 }
